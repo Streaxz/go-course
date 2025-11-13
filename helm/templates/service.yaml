@@ -1,12 +1,13 @@
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
-  name: go_hello_service
-  labels:
-    app: go_hello_service
+  name: lomonosov
 spec:
   selector:
-    app: go_hello
+    app: lomonosov
   ports:
-    - port: 81
-      targetPort: 8080
+  - port: 80
+    targetPort: 7777
+    nodePort: 30777
+  type: NodePort
+
